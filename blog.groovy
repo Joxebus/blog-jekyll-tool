@@ -9,7 +9,7 @@
 import groovy.yaml.YamlSlurper
 import groovy.yaml.YamlBuilder
 
-// The location of your configuration for Jekill blog
+// The location of your configuration for Jekyll blog
 String HOME_FOLDER = System.getProperty("user.home") + File.separator + "blog-config"
 String BLOG_FOLDER = System.getenv("BLOG_FOLDER")
 File homeFolder = new File(HOME_FOLDER)
@@ -57,7 +57,7 @@ def newPost = { String title ->
     def now = new Date().format(dateFormat)
     String blogTitle = [now, title.toLowerCase().replace(" ", "-")].join("-")
     File configFile = new File(BLOG_FOLDER+File.separator+"_posts", "${blogTitle}.md")
-    configFile.text = "### $title \n\nYou can start writing here in Markdown format https://www.markdownguide.org/basic-syntax/"
+    configFile.text = "## $title \n\nYou can start writing here in Markdown format https://www.markdownguide.org/basic-syntax/"
     println "New post created at [${configFile.absolutePath}]"
 }
 
