@@ -61,6 +61,18 @@ def newPost = { String title ->
     println "New post created at [${configFile.absolutePath}]"
 }
 
+def listPosts = {
+    File directory = new File(BLOG_FOLDER+File.separator+"_posts")
+    String regex = /.*\.md/
+    List<String> filenames = []
+
+    directory.eachFileMatch(~regex) { file ->
+        filenames << file.name
+    }
+
+    filenames.sort().each { println it }
+}
+
 if (!args || args.length > 2) {
     println "Invalid arguments, please see the usage section: "
     usage()
@@ -95,6 +107,11 @@ if(["-n", "--new"].contains(args[0])) {
         return 1
     }
     newPost(args[1])
+    return
+}
+
+if(["-l", "--list"].contains(args[0])) {
+    listPosts()
     return
 }
 
