@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 /**
- * Installation:
+ * Installation: See more on README.md
  * chmod +x blog.groovy
  * cp blog.groovy /usr/local/bin/blog
  */
