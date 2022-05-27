@@ -29,7 +29,7 @@ chmod +x blog.groovy
 cp blog.groovy /usr/local/bin/blog
 ```
 
-
+**Note:** _You can compile this script as NativeImage with GraalVM, check the [BUILD_GRAALVM_IMAGE.md](BUILD_GRAALVM_IMAGE.md)_
 
 
 ## Usage
