@@ -39,7 +39,8 @@ You can see the options by running the command `-h` or `--help`
 ```shell script
 blog -h
 
-usage: blog -[chnl]
+usage: blog -[schnl]
+ -s,--settings      Configure settings of the command line
  -c,--configure     Configure user info
  -h,--help          Usage Information
  -n,--new <Title>   Create new blog post with title
@@ -53,6 +54,16 @@ The initial configuration of your blog can start by simply execute the command.
 blog -c
 ```
 
+You can modify the settings of the tool with the command `-s` or `--settings` this will create
+a file on your `HOME_USER/blog-config/settings.yml` like this.
+
+```yaml
+editor: "idea"
+open_on_create: "y"
+author: "Omar Bautista"
+tags: "joxebus, programming, java, groovy, desveloper"
+```
+
 Follow the steps, and then you are ready to create your first blog post using the next command:
 
 ```shell script
@@ -62,6 +73,23 @@ New post created at [<BLOG_FOLDER>/_posts/2022-05-26-title-of-your-post.md]
 
 This will create a new file on your `_posts` folder with the following format 
 `yyyy-MM-dd-title-of-your-post.md`
+
+_**Sample file generated with the tool**_
+```markdown
+---
+title:      "Title of your post"
+subtitle:   "Something that describes your post"
+date:       2022-05-27 20:34
+author:     "Omar Bautista"
+header-img: "/your/image/here"
+category:   techblog
+tags:       [joxebus, programming, java, groovy, desveloper]
+---
+
+## Title of your post
+
+You can start writing here in Markdown format https://www.markdownguide.org/basic-syntax/
+```
 
 You can list the current `_posts` by doing executing the command
 
