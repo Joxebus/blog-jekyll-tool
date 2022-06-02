@@ -10,26 +10,27 @@ After you have your new project you can configure it with this tool.
 
 ## Requirements
 
-- Groovy 3.0.6
+- Java 11+
+- Groovy 4.0.2
 
 ```shell script
-sdk install groovy 3.0.6
+sdk install groovy 4.0.2
 ```
 
 ## Install
 
 For unix users you can install directly with the following commands
 
-- _First the give execution privileges_
+### Installation script
 ```shell script
-chmod +x blog.groovy
+./install.sh
 ```
-- _Then copy the file to be available anywhere on you terminal_
+### Maven
 ```shell script
-cp blog.groovy /usr/local/bin/blog
+mvn verify -Punix
 ```
 
-**Note:** _You can compile this script as NativeImage with GraalVM, check the [BUILD_GRAALVM_IMAGE.md](BUILD_GRAALVM_IMAGE.md)_
+**Note:** There is no profile for Windows systems for now.
 
 
 ## Usage
