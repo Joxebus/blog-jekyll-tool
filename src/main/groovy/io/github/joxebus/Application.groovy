@@ -59,5 +59,10 @@ class Application {
             commandService.listPosts()
             System.exit(0)
         }
+
+        if(["-d", "--delete"].contains(args[0])) {
+            commandService.delete(args[1])
+            System.exit(0)
+        }
     }
 }

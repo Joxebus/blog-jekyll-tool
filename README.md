@@ -40,12 +40,13 @@ You can see the options by running the command `-h` or `--help`
 ```shell script
 blog -h
 
-usage: blog -[schnl]
- -s,--settings      Configure settings of the command line
- -c,--configure     Configure user info
- -h,--help          Usage Information
- -n,--new <Title>   Create new blog post with title
- -l,--list          List blog posts created
+usage: blog -[schnld]
+ -s,--settings            Configure settings of the command line
+ -c,--configure           Configure user info
+ -h,--help                Usage Information
+ -n,--new <Title>         Create new blog post with title
+ -l,--list                List blog posts created
+ -d,--delete <filename>   Delete a specific blog post file by name
 
 ```
 
@@ -103,3 +104,12 @@ blog -l
 2022-05-26-this-is-a-new-blog-post.md
 
 ```
+
+You can delete a specific blog post file with the command `-d` or `--delete`
+
+```shell script
+> blog -d 2022-06-01-test-element.md
+File [2022-06-01-test-element.md] has been deleted.
+```
+
+If the post you want to delete doesn't exist, then the tool will show you the list of valid names.

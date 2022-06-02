@@ -31,6 +31,19 @@ class PostService {
 
     }
 
+    def deletePost(String filename) {
+        File file = new File(Configuration.BLOG_FOLDER+File.separator+"_posts", filename)
+
+        if(file.exists()) {
+            file.delete()
+            println "File [$filename] has been deleted."
+        } else {
+            println "File [$filename] doesn't exists. Please select a valid name."
+            listPosts()
+        }
+
+    }
+
     def listPosts() {
         File directory = new File(Configuration.BLOG_FOLDER+File.separator+"_posts")
         String regex = /.*\.md/
