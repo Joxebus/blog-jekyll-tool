@@ -1,7 +1,7 @@
 package io.github.joxebus.conf
 
 class Configuration {
-    static final String HOME_FOLDER = System.getProperty("user.home") + File.separator + "blog-config"
+    static final String HOME_FOLDER = System.getProperty("user.home") + File.separator + ".blog-config"
     static final String BLOG_FOLDER = System.getenv("BLOG_FOLDER")
     static final File homeFolder = new File(HOME_FOLDER)
 
