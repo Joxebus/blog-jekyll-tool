@@ -1,0 +1,13 @@
+---
+title:      "$title"
+subtitle:   "Something that describes your post"
+date:       $date
+author:     "$author"
+header-img: "/your/image/here"
+category:   techblog
+tags:       [$tags]
+---
+
+## $title
+
+You can start writing here in Markdown format https://www.markdownguide.org/basic-syntax/

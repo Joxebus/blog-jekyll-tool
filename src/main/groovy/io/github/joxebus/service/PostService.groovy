@@ -20,11 +20,13 @@ class PostService {
                 tags: toolSettings["tags"]
         ]
         def engine = new SimpleTemplateEngine()
-        configFile.text = engine.createTemplate(Configuration.blogPostTemplate).make(binding)
+        URL blogPostTemplate = Thread.currentThread()
+                .getContextClassLoader()
+                .getResource(Configuration.BLOG_POST_TEMPLATE)
+        configFile.text = engine.createTemplate(blogPostTemplate).make(binding)
         println "New post created at [${configFile.absolutePath}]"
         if(toolSettings["open_on_create"] == "y") {
             println "Opening file with [${toolSettings["editor"]}]"
-
             String command = "${toolSettings["editor"]} ${configFile.absolutePath}"
             command.execute()
         }

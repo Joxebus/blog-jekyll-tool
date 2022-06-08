@@ -10,7 +10,7 @@ class ConfigurationService {
 
     def configureSettings() {
         def yamlBuilder = new YamlBuilder()
-        File settingsFile = new File(Configuration.HOME_FOLDER, "settings.yml")
+        File settingsFile = new File(Configuration.HOME_FOLDER, Configuration.SETTINGS_FILE_NAME)
 
         Map settingsMap = [:]
         Configuration.settings.each { setting, message ->
@@ -24,8 +24,8 @@ class ConfigurationService {
     }
 
     def configure() {
-        File configFileBackup = new File(Configuration.BLOG_FOLDER, "_config.bak")
-        File configFile = new File(Configuration.BLOG_FOLDER, "_config.yml")
+        File configFileBackup = new File(Configuration.BLOG_FOLDER, Configuration.CONFIG_BACKUP_FILE_NAME)
+        File configFile = new File(Configuration.BLOG_FOLDER, Configuration.CONFIG_BACKUP_FILE_NAME)
 
         if(!configFileBackup.exists()) {
             configFileBackup << configFile.text

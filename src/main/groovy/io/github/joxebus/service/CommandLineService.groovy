@@ -9,10 +9,16 @@ class CommandLineService {
     PostService postService = new PostService()
 
     void configureSettings() {
+        println("""===================================
+           |Setup local settings for [blog] command
+           |===================================""".stripMargin())
         configurationService.configureSettings()
     }
 
     void configure() {
+        println("""===================================
+           |Setup your blog project
+           |===================================""".stripMargin())
         configurationService.configure()
     }
 
