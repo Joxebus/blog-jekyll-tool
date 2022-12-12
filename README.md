@@ -11,13 +11,21 @@ After you have your new project you can configure it with this tool.
 ## Requirements
 
 - Java 11+
-- Groovy 4.0.2
+- Groovy 4+
 
 ```shell script
 sdk install groovy 4.0.2
 ```
 
 ## Install
+
+Before use the tool you need to set up an environment variable called `BLOG_FOLDER` this will be
+the location in your local machine where all your files for you blog are placed.
+
+#### Blog Jekyll Folder location sample
+```shell
+export BLOG_FOLDER="/location/to/my/blog"
+```
 
 For unix users you can install directly with the following commands
 
